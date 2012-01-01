@@ -18,10 +18,18 @@ function  #function to identify outdated or Excel-mogrified gene symbols
     }
     data(hgnc.table)
     approved <- x %in% hgnc.table$Approved.Symbol
-    alias <- x %in% hgnc.table$Symbol
+    ##change to upper case, then change orfs back to lower case:
+    x.casecorrected <- toupper(x)
+    x.casecorrected <- sub("(.*C[0-9XY]+)ORF(.+)", "\\1orf\\2", x.casecorrected)
+    if (!all(x == x.casecorrected))
+        warning("Some lower-case letters were found and converted to upper-case.
+                 HGNChelper is intended for human symbols only, which should be all
+                 upper-case except for open reading frames (orf).")
+    alias <- x.casecorrected %in% hgnc.table$Symbol
     df <- data.frame(x=x,
                      Approved=approved,
-                     Suggested.Symbol=sapply(1:length(x), function(i) ifelse(approved[i], x[i], ifelse(alias[i],paste(hgnc.table$Approved.Symbol[x[i] == hgnc.table$Symbol], 
+                     Suggested.Symbol=sapply(1:length(x), function(i)
+                     ifelse(approved[i], x[i], ifelse(alias[i],paste(hgnc.table$Approved.Symbol[x.casecorrected[i] == hgnc.table$Symbol], 
                      collapse=" /// "), NA))),
                      stringsAsFactors=FALSE)
     if(!unmapped.as.na){

@@ -14,8 +14,8 @@ official symbol.}
 Maintainer: \tab Levi Waldron <lwaldron@hsph.harvard.edu>\cr
 Depends: \tab R (>= 2.10)\cr
 Author: \tab Levi Waldron and Markus Riester\cr
-Version: \tab 0.2\cr
-Date: \tab 2012-07-23\cr
+Version: \tab \Sexpr{packageDescription("HGNChelper")$Version}\cr
+Date: \tab \Sexpr{packageDescription("HGNChelper")$Date}\cr
 License: \tab GPL (>2.0)\cr
 Title: \tab Handy functions for working with HGNC gene symbols and
 Affymetrix probeset identifiers.\cr

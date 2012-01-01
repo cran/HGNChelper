@@ -9,3 +9,10 @@ changes to checkGeneSymbols:
 * Added unmapped.as.na option
 * set stringsAsFactors=FALSE so output columns are character class instead of factor
 * use return(df) instead of invisible(df).
+
+0.2.2:
+* license to GPL >= 2.0 (from GPL > 2.0)
+* convert all putative gene symbols to upper-case, except for orf.
+  This catches symbols that are non-standard because of lower-case
+  letters.
+* added inst/extdata/genenames_org.csv for full transparency
