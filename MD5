@@ -1,0 +1,16 @@
+a74ea265067047308ee7f9d322458396 *DESCRIPTION
+8b54e5a89fbda3af5e077053d40bec76 *NAMESPACE
+f2e169e17cea6c463d5d8a4efcae5e5b *R/affyToR.R
+6daa58853ba9e2d41cefd258af969015 *R/findExcelGeneSymbols.R
+4bf9218d85a07684cf77d7d5bb942b3f *R/rToAffy.R
+d8aa2a2199e7eecdb429d45349fc5743 *R/rToSymbol.R
+b980e4738939a22b0695461fceae5d72 *R/symbolToR.R
+a8696c70b3e0aae3dccdc14a10c6b380 *data/hgnc.symbols.rda
+40b31871276d1cc419b00db409908f39 *inst/extdata/mog_map.csv
+a3c27b3f7685f6f6d2ba1094df791b5f *man/HGNChelper-package.Rd
+f6383b9d6b14f5e7179cb9e05f1a4169 *man/affyToR.Rd
+40592d7516d40e26186f42310bd361da *man/findExcelGeneSymbols.Rd
+3127eb00bdc2c5d4725b7ce4828a5382 *man/hgnc.symbols.Rd
+cdcc559108c4ad36e713fa250e5a0575 *man/rToAffy.Rd
+7a16c1fb2f6bd6d87580c4a6cdb388fe *man/rToSymbol.Rd
+aa65313b1a8e6627cebdd965721d1019 *man/symbolToR.Rd
