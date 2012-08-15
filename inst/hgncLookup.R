@@ -1,0 +1,30 @@
+map <- read.delim("http://www.genenames.org/cgi-bin/hgnc_downloads.cgi?title=HGNC+output+data&submit=submit&hgnc_dbtag=on&col=gd_hgnc_id&col=gd_app_sym&col=gd_prev_sym&col=gd_aliases&status=Approved&status=Entry+Withdrawn&status_opt=2&where=&order_by=gd_app_sym_sort&format=text&limit=&.cgifields=&.cgifields=chr&.cgifields=status&.cgifields=hgnc_dbtag",as.is=TRUE)
+
+M  <- do.call(rbind,apply(map[nchar(map[,3])>0 | nchar(map[,4])>0 ,], 1,
+function(x) {
+    y <- strsplit(paste(x[3:4],collapse=", "), ", ")[[1]]
+    cbind(y[y!=""], x[2])
+    }))
+N <- map[nchar(map[,3])==0,c(2,2)]
+id <- grep("withdrawn", N[,1])
+N[id,2] <- NA
+N[,1] <- gsub("~withdrawn","", N[,1])
+
+O = read.csv(system.file("extdata/mog_map.csv", package = "HGNChelper"),
+as.is=TRUE)[,2:1]
+
+colnames(M) <- c("Symbol","Approved.Symbol")
+colnames(N) <- c("Symbol","Approved.Symbol")
+colnames(O) <- c("Symbol","Approved.Symbol")
+
+hgnc.table <- rbind(M,N,O)
+
+# remove withdrawn symbols with known new name
+hgnc.table <- hgnc.table[!(duplicated(hgnc.table[,1]) & is.na(hgnc.table[,2])),]
+hgnc.table <- hgnc.table[order(hgnc.table[,1]),]
+
+hgnc.table[,1] <- as.character(hgnc.table[,1])
+hgnc.table[,2] <- as.character(hgnc.table[,2])
+rownames(hgnc.table) <- 1:nrow(hgnc.table)
+
+save(hgnc.table, file="../data/hgnc.table.rda", compress="bzip2")

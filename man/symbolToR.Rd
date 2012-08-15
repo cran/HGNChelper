@@ -13,13 +13,14 @@ substitutions: "-" to "hyphen", "@" to "ampersand", and "/" to
 \value{a vector of valid R names, of the same length as x, which can be
 converted to the same HGNC symbols using the rToSymbol function.}
 
-\examples{
-###See that transformation is reversible:
-data(hgnc.symbols)
-hgnc.symbols <- hgnc.symbols[ ,2]
-hgnc.symbols <- hgnc.symbols[!grepl("withdrawn", hgnc.symbols)]
-if( !identical(all.equal(hgnc.symbols, rToSymbol(symbolToR(hgnc.symbols))), TRUE))
-    stop("HGNC mapping was not reversible.")
-}
+\author{Levi Waldron and Markus Riester}
 
-\author{Levi Waldron}
+
+
+
+\examples{library(HGNChelper)
+
+data(hgnc.table)
+hgnc.symbols <- as.character(na.omit(unique(hgnc.table[ ,2])))
+if( !identical(all.equal(hgnc.symbols, rToSymbol(make.names(symbolToR(hgnc.symbols)))), TRUE))
+     stop("HGNC mapping was not reversible.")}
