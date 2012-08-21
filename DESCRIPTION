@@ -2,8 +2,8 @@ Package: HGNChelper
 Maintainer: Levi Waldron <lwaldron@hsph.harvard.edu>
 Depends: R (>= 2.10)
 Author: Levi Waldron and Markus Riester
-Version: 0.2
-Date: 2012-08-15
+Version: 0.2.1
+Date: 2012-08-21
 License: GPL (> 2.0)
 Title: Handy functions for working with HGNC gene symbols and
         Affymetrix probeset identifiers.
@@ -14,6 +14,6 @@ Description: Contains functions for identifying and correcting HGNC
         and outdated symbols which can be mapped to an official symbol.
 URL: https://bitbucket.org/lwaldron/hgnchelper
 BugReports: https://bitbucket.org/lwaldron/hgnchelper/issues
-Packaged: 2012-08-15 19:40:25 UTC; lwaldron
+Packaged: 2012-08-28 00:21:43 UTC; lwaldron
 Repository: CRAN
-Date/Publication: 2012-08-16 05:45:27
+Date/Publication: 2012-10-07 21:08:18

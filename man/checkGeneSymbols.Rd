@@ -6,9 +6,13 @@ mogrified by Excel or other spreadsheet programs.  If output is
 assigned to a variable, it returns a data.frame of the same number of
 rows as the input, with a second column indicating whether the symbols
 are valid and a third column with a corrected gene list.}
-\usage{checkGeneSymbols(x)}
+\usage{checkGeneSymbols(x, unmapped.as.na=TRUE)}
 \arguments{
-  \item{x}{Vector of gene symbols to check for mogrified or outdated values}
+  \item{x}{Vector of gene symbols to check for mogrified or outdated
+    values}
+  \item{unmapped.as.na}{If TRUE, unmapped symbols will appear as NA in the
+    Suggested.Symbol column.  If FALSE, the original unmapped symbol
+    will be kept when no correction can be found.  Default is TRUE.}
 }
 
 \value{The function will return a data.frame of the same number of rows as the input,
