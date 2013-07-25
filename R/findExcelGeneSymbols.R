@@ -11,7 +11,8 @@ function  #function to identify Excel-mogrified gene symbols
  ### package by data(mog.map), but any map may be used.  This should be
  ### a dataframe with two columns: original and mogrified, containing
  ### the correct and incorrect symbols, respectively.
- regex="[0-9]\\-(JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)|[0-9]\\.[0-9][0-9]E\\+[[0-9][0-9]"
+ regex="[0-9]\\-(JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)|[0-9]\\.[0-9]
+[0-9]E\\+[[0-9][0-9]"
  ### Regular expression, recognized by the base::grep function which
  ### is called with ignore.case=TRUE, to identify mogrified symbols.
  ### It is not necessary for all matches to have a corresponding entry

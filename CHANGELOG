@@ -16,3 +16,9 @@ changes to checkGeneSymbols:
   This catches symbols that are non-standard because of lower-case
   letters.
 * added inst/extdata/genenames_org.csv for full transparency
+
+0.2.5:
+* update inst/hgncLookup.R to new genenames.org webpage.
+* added hgnc.table argument to checkGeneSymbols() to allow optional
+  specification of a more up-to-date map from genenames.org.
+* update to 2013/07/25 HGNC data.

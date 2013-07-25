@@ -1,12 +1,18 @@
 \name{findExcelGeneSymbols}
 \alias{findExcelGeneSymbols}
+\seealso{checkGeneSymbols}
 \title{function to identify Excel-mogrified gene symbols}
 \description{This function identifies gene symbols which may have been
 mogrified by Excel or other spreadsheet programs.  If output is
 assigned to a variable, it returns a vector of the same length
-where symbols which could be mapped have been mapped.}
+where symbols which could be mapped have been mapped.  Note that this
+function is superceded by checkGeneSymbols, which corrects
+Excel-mogrified gene symbols as well as aliases and outdated symbols.}
 \usage{findExcelGeneSymbols(x, mog.map = read.csv(system.file("extdata/mog_map.csv", 
-    package = "HGNChelper"), as.is = TRUE), regex = "[0-9]\\\-(JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)|[0-9]\\\.[0-9][0-9]E\\\+[[0-9][0-9]")}
+    package = "HGNChelper"), as.is = TRUE), regex = 
+"[0-9]\\\-(JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)|[0-9]\\\.[0-9]
+[0-9]E\\\+[[0-9][0-9]")
+}
 \arguments{
   \item{x}{Vector of gene symbols to check for mogrified values}
   \item{mog.map}{Map of known mogrifications.  A default map is available with this

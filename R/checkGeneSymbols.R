@@ -7,16 +7,24 @@ function  #function to identify outdated or Excel-mogrified gene symbols
 ### are valid and a third column with a corrected gene list.
 (x,
  ### Vector of gene symbols to check for mogrified or outdated values
- unmapped.as.na=TRUE
+ unmapped.as.na=TRUE,
  ### If TRUE, unmapped symbols will appear as NA in the
  ### Suggested.Symbol column.  If FALSE, the original unmapped symbol
  ### will be kept.
+ hgnc.table=NULL
+ ### If hgnc.table is a data.frame with colnames(hgnc.table) identical
+ ### to c("Symbol", "Approved.Symbol"), it will be used to correct
+ ### gene symbols.  Otherwise, the default table data("hgnc.table",
+ ### package="HGNChelper") is used.
  ){
     if(class(x) != "character"){
         x <- as.character(x)
         warning("coercing x to character.")
     }
-    data(hgnc.table)
+    if(!is(hgnc.table, "data.frame") | !identical(colnames(hgnc.table), c("Symbol", "Approved.Symbol"))){
+        rm(hgnc.table)
+        data("hgnc.table", package="HGNChelper", envir=environment())
+    }
     approved <- x %in% hgnc.table$Approved.Symbol
     ##change to upper case, then change orfs back to lower case:
     x.casecorrected <- toupper(x)
