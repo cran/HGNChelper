@@ -30,14 +30,19 @@ with corrections possible from hgnc.table. }
 
 \examples{library(HGNChelper)
 
-x = c("FN1", "TP53", "UNKNOWNGENE","7-Sep", "1-Mar") 
+x = c("FN1", "TP53", "UNKNOWNGENE","7-Sep", "9/7", "1-Mar", "Oct4", "4-Oct",
+      "OCT4-PG4", "C19ORF71", "C19orf71")
 
 res <- checkGeneSymbols(x)
 res
 
-stopifnot(sum(res[,1] != x) == 0)
-stopifnot(sum(res[,2] != c(TRUE,TRUE,FALSE,FALSE,FALSE)) == 0)
-stopifnot( all.equal(as.character(res[,3]), c("FN1","TP53",NA,"SEPT7","MARCH1 /// MARC1")) 
-)
-
+if (interactive()){
+    ##Run checkGeneSymbols with a brand-new map downloaded from HGNC:
+    source(system.file("hgncLookup.R", package = "HGNChelper"))
+    ##You should save this if you are going to use it multiple times,
+    ##then load it from file rather than burdening HGNC's servers.
+    ## save(hgnc.table, file="hgnc.table.rda", compress="bzip2")
+    ## load("hgnc.table.rda")
+    res <- checkGeneSymbols(x, hgnc.table=hgnc.table)
+}
 }

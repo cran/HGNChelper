@@ -21,4 +21,14 @@ changes to checkGeneSymbols:
 * update inst/hgncLookup.R to new genenames.org webpage.
 * added hgnc.table argument to checkGeneSymbols() to allow optional
   specification of a more up-to-date map from genenames.org.
-* update to 2013/07/25 HGNC data.
+* update to 2014/02/09 HGNC data.
+* move vignette to new location
+* GEO GPL analysis to inst/analyses, not included in build.
+
+0.2.6:
+* fixed checkGeneSymbols(x) when x contains NAs.
+
+0.3.0:
+* add toupper() to hgnc.table[, 1]
+* add additional Excel date formats to inst/extdata/mog_map.csv
+* additional unit tests in man/checkGeneSymbols.Rd
