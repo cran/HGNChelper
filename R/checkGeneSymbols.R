@@ -30,6 +30,7 @@ function  #function to identify outdated or Excel-mogrified gene symbols
     ##change to upper case, then change orfs back to lower case:
     x.casecorrected <- toupper(x)
     x.casecorrected <- sub("(.*C[0-9XY]+)ORF(.+)", "\\1orf\\2", x.casecorrected)
+    approvedaftercasecorrection <- x.casecorrected %in% hgnc.table$Approved.Symbol
     if (!identical(all.equal(x, x.casecorrected), TRUE))
         warning("Some lower-case letters were found and converted to upper-case.
                  HGNChelper is intended for human symbols only, which should be all
@@ -38,10 +39,14 @@ function  #function to identify outdated or Excel-mogrified gene symbols
     df <- data.frame(x=x,
                      Approved=approved,
                      Suggested.Symbol=sapply(1:length(x), function(i)
-                         ifelse(approved[i], x[i], ifelse(alias[i], paste(hgnc.table$Approved.Symbol[x.casecorrected[i] == hgnc.table$Symbol], collapse=" /// "), NA))),
+                         ifelse(approved[i],
+                                x[i],
+                                ifelse(alias[i],
+                                       paste(hgnc.table$Approved.Symbol[x.casecorrected[i] == hgnc.table$Symbol], collapse=" /// "),
+                                       ifelse(approvedaftercasecorrection[i],
+                                              x.casecorrected[i],
+                                              NA)))),
                      stringsAsFactors=FALSE)
-
-
     df$Approved[is.na(df$x)] <- FALSE
     if(!unmapped.as.na){
         df[is.na(df$Suggested.Symbol), "Suggested.Symbol"] <- df[is.na(df$Suggested.Symbol), "x"]

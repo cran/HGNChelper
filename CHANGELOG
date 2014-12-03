@@ -32,3 +32,9 @@ changes to checkGeneSymbols:
 * add toupper() to hgnc.table[, 1]
 * add additional Excel date formats to inst/extdata/mog_map.csv
 * additional unit tests in man/checkGeneSymbols.Rd
+
+0.3.1:
+* update map to Dec 3, 2014
+* fixed corner case of orf with incorrect capitalization - was being
+identified as invalid, but not corrected.  Example was c21orf62-as1,
+which now gets corrected to C21orf62-AS1 - see tests/checkGeneSymbols.R.
