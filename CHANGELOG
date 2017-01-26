@@ -38,3 +38,8 @@ changes to checkGeneSymbols:
 * fixed corner case of orf with incorrect capitalization - was being
 identified as invalid, but not corrected.  Example was c21orf62-as1,
 which now gets corrected to C21orf62-AS1 - see tests/checkGeneSymbols.R.
+
+0.3.2:
+* update map to Jan 17, 2016
+* Fixed issue #4 
+  (https://bitbucket.org/lwaldron/hgnchelper/issues/4/typos-in-mog_mapcsv)
