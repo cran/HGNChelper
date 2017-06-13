@@ -1,5 +1,5 @@
 1eab4ae4cd5f7e0afcd4632258222aa1 *CHANGELOG
-24dccc15be535a7be14e8b3a8365b280 *DESCRIPTION
+6854a283453aa1b65a84410236b9cbc4 *DESCRIPTION
 4989c88934557bd974ce784161b7d9bb *NAMESPACE
 2fce8cfc84ef81513a49749ee3523e63 *R/affyToR.R
 8493e030a3954877e86e8ae879bd09fc *R/checkGeneSymbols.R
@@ -7,9 +7,9 @@ a3764648b5397165d9ebac9ed992c61e *R/findExcelGeneSymbols.R
 d06a62aed8d930e1f5499de3ca878017 *R/rToAffy.R
 d8aa2a2199e7eecdb429d45349fc5743 *R/rToSymbol.R
 b980e4738939a22b0695461fceae5d72 *R/symbolToR.R
-551ebcca907ff00e4a98f3c2c5bff4de *build/HGNChelper.pdf
-32f1b273d72f1d4212a94e660e731007 *data/hgnc.table.rda
-442e121c9cc4d2e68dadd2aa6028fe66 *inst/extdata/genenames_org.rda
+1f69e31caff29bc09b2e073e4db5eedf *build/HGNChelper.pdf
+2aba1657f0b3381b5de668600fa63112 *data/hgnc.table.rda
+a67314b21b990274adeee08730becf19 *inst/extdata/genenames_org.rda
 84092544dc13199f405d8f21c08fa6b8 *inst/extdata/mog_map.csv
 290ef6701622246bf663e1d9f641bb18 *inst/extdata/valid_vs_year.R
 e8a1b7e3bea9c079a547e49afdbc3d81 *inst/hgncLookup.R
