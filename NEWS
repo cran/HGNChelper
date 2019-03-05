@@ -1,6 +1,13 @@
 # HGNChelper
 ----------------------------------------------------------------
 
+## Changes in version 0.7.0
+* Use new genenames.org download URL (ftp://ftp.ebi.ac.uk/pub/databases/genenames/new/tsv/hgnc_complete_set.txt)
+* This includes non-coding RNA, "phenotype", pseudogene, protein-coding gene, and "other"
+
+## Changes in version 0.6.0
+* Add vignette
+
 ## Changes in version 0.5.0
 * Add getCurrentHumanMap and getCurrentMouseMap
 
