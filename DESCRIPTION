@@ -2,8 +2,8 @@ Package: HGNChelper
 Maintainer: Levi Waldron <lwaldron.research@gmail.com>
 Depends: R (>= 3.5.0), methods, utils
 Author: Levi Waldron and Markus Riester
-Version: 0.7.1
-Date: 2019-03-04
+Version: 0.8.1
+Date: 2019-10-24
 License: GPL (>= 2.0)
 Title: Identify and Correct Invalid HGNC Human Gene Symbols and MGI
         Mouse Gene Symbols
@@ -16,9 +16,10 @@ URL: https://github.com/waldronlab/HGNChelper
 BugReports: https://github.com/waldronlab/HGNChelper/issues
 LazyData: TRUE
 RoxygenNote: 6.1.1
+Encoding: UTF-8
 Suggests: testthat, knitr, rmarkdown
 VignetteBuilder: knitr
 NeedsCompilation: no
-Packaged: 2019-03-05 04:33:57 UTC; rstudio
+Packaged: 2019-10-24 16:42:15 UTC; lwaldron
 Repository: CRAN
-Date/Publication: 2019-03-05 23:20:03 UTC
+Date/Publication: 2019-10-24 18:00:03 UTC
