@@ -41,7 +41,7 @@ findExcelGeneSymbols <- function(x,
   mog.map=read.csv(system.file("extdata/mog_map.csv", package = "HGNChelper"), as.is=TRUE),
   regex="impossibletomatch^"
  ){
-    if(class(x) != "character"){
+    if(!is(x, "character")){
         x <- as.character(x)
         warning("coercing x to character.")
     }

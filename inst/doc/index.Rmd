@@ -22,7 +22,7 @@ Physicians and biologists like gene symbols and bioinformaticians hate'em. Why? 
 
 ![](0DaysSince.png)
 
-Myself (Levi speaking), I don't mind them. It's way easier to remember [TP53](http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=11998) than to remember [7157](http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?db=gene&cmd=Retrieve&dopt=full_report&list_uids=7157) or [ENSG00000141510](http://www.ensembl.org/Homo_sapiens/geneview?gene=ENSG00000141510). They're a fact of life. So Markus Riester and I wrote HGNChelper to make them a little more pleasant to bioinformaticians. 
+Myself (Levi speaking), I don't mind them. It's way easier to remember [TP53](https://www.genenames.org/data/gene-symbol-report/#!/hgnc_id/HGNC:11998) than to remember [7157](https://www.ncbi.nlm.nih.gov/gene?cmd=Retrieve&dopt=full_report&list_uids=7157) or [ENSG00000141510](https://www.ensembl.org/Homo_sapiens/geneview?gene=ENSG00000141510). They're a fact of life. So Markus Riester and I wrote HGNChelper to make them a little more pleasant to bioinformaticians. 
 
 ## HGNChelper functionality
 
@@ -45,21 +45,22 @@ As you see, it even helps fix capitalization. How does it fix those Excel dates?
 
 ## Mouse gene symbols
 
-**Warning** the list of valid mouse symbols seems to be incomplete, see below. Mouse genes work the same way, but you need to specify the argument `species=mouse`:
+Mouse genes work the same way, but you need to specify the argument `species=mouse`:
 
 ```{r}
-checkGeneSymbols(c("1-Feb", "Pzp", "A2m"), species="mouse")
+checkGeneSymbols(c("1-Feb", "Pzp", "A2m", "E430008G22Rik"), species="mouse")
 ```
 
-I don't work with mouse data, so use this functionality with care and please let me know if you have any suggestions. For one thing, [Pzp](http://www.informatics.jax.org/marker/MGI:87854) in the above example is a valid gene symbol, but it is not in the [MGI_EntrezGene.rpt](http://www.informatics.jax.org/downloads/reports/MGI_EntrezGene.rpt) file I used to build a map. [Suggestions welcome](https://github.com/waldronlab/HGNChelper/issues) about how to build a more complete map of valid symbols. To be on the safe side, you could set `unmapped.as.na = FALSE` to keep unrecognized symbols as-is and only correct ones that have a definitive correction.
+Mouse gene symbols containing any capital letter, except the first character, can not be
+fixed. For example, 'E430008G22Rik' is a symbol for [Abl1](https://www.informatics.jax.org/marker/MGI:87859) gene, but we couldn't fix it. [Suggestions welcome](https://github.com/waldronlab/HGNChelper/issues) about how to build a more complete map of valid symbols. To be on the safe side, you could set `unmapped.as.na = FALSE` to keep unrecognized symbols as-is and only correct ones that have a definitive correction.
 
 ## What exactly checkGeneSymbols does
 
 HGNChelper does the following corrections:
 
-1. fix capitalization (for human only). Only **orf** genes are allowed to have lower-case letters.
+1. fix capitalization. For human, only **orf** genes are allowed to have lower-case letters.   
 2. fix Excel-mogrified symbols
-3. fix symbols that are listed as aliases to a more recent symbol in the [HGNC](https://www.genenames.org/) or [MGI](http://www.informatics.jax.org/) (MGI_EntrezGene_rpt) database.
+3. fix symbols that are listed as aliases to a more recent symbol in the [HGNC](https://www.genenames.org/) or [MGI](https://www.informatics.jax.org/) (MGI_EntrezGene_rpt) database.
 
 Numbers 2 and 3 are done by comparing to a complete map of both valid and invalid but mappable symbols, shipped with HGNChelper:
 
@@ -72,10 +73,28 @@ These are a combination of manually generated Excel mogrifications that remain c
 
 ## Updating maps of aliased gene symbols
 
-Gene symbols are aliased much more frequently than I can update this package, like every day. If you want the most current maps of aliases, you can either:
+Gene symbols are aliased much more frequently than I can update this package, like every day. 
+We intentionally avoid automatic update of the map to maintain reproducibility, because the 
+same code from the same version of HGNChelper could produce different results at any 
+time with automatic map update. If you want the most current maps of aliases, you can either:
 
 1. use the `getCurrentHumanMap()` or `getCurrentMouseMap()` function, and provide the returned result through the `map=` argument of `checkGeneSymbols()`, or
 2. See the instructions for updating your package locally at https://github.com/waldronlab/HGNChelper (it's just one command-line command as long as you have R and [roxygen2](https://cran.r-project.org/package=roxygen2) installed)
+
+## What does the expand.ambiguous argument do
+
+As mentioned above genes symbols are aliased very frequently. It is possible that a gene symbol which was earlier an alias is now an approved symbol.
+'checkGeneSymbols()' by default will give out only the approved symbol of a gene. This can be an issue specifically when analyzing an older dataset which may be referencing to a previously aliased (now approved) gene symbol mapping to another approved symbol at that time. 
+This can be checked with 'expand.ambiguous = TRUE' which gives out all the mapping of a gene symbol irrespective of whether it's an approved symbol.
+
+```{r}
+checkGeneSymbols("AAVS1", expand.ambiguous = FALSE)
+checkGeneSymbols("AAVS1", expand.ambiguous = TRUE)
+
+checkGeneSymbols(c("Cpamd8", "Mug2"), species = "mouse", expand.ambiguous = FALSE)
+checkGeneSymbols(c("Cpamd8", "Mug2"), species = "mouse", expand.ambiguous = TRUE)
+```
+
 
 ## Where do I find HGNChelper?
 

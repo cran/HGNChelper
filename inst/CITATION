@@ -1,0 +1,24 @@
+citHeader("Please cite our software :)")
+
+bibentry(entry = "Article",
+    bibtype = "article",
+    title = "HGNChelper: identification and correction of invalid gene symbols for human and mouse",
+    author = c(person("Sehyun", "Oh", email = "sehyun.oh@sph.cuny.edu", role = "cre"), 
+    person("Jasmine"," Abdelnabi", role = "ctb"),
+    person("Ragheed", "Al-Dulaimi", role = "ctb"),
+    person("Ayush","Aggarwal", role = "ctb"), 
+    person("Marcel", "Ramos", role = "aut"),
+    person("Carmen Rodriguez", "Cabrera", role = "ctb"), 
+    person("Tiffany", "Chan", role = "ctb"),
+    person("Sean", "Davis", role = "ctb"), 
+    person("Markus", "Riester", role = "aut"),
+    person("Levi", "Waldron", role = "aut")),
+    journal = "F1000 Research",
+    year = "2020",
+    volume = "9:1493",
+    textVersion =
+    paste("Sehyun Oh et al.",
+        "HGNChelper: identification and correction of invalid gene symbols for human and mouse.",
+        "F1000Research 2020, 9:1493.",
+        "DOI: https://doi.org/10.12688/f1000research.28033.1")
+)
