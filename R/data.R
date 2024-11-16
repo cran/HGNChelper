@@ -32,7 +32,7 @@
 #' data("hgnc.table", package="HGNChelper")
 #' head(hgnc.table)
 #' 
-#' @source Extracted from \url{ftp://ftp.ebi.ac.uk/pub/databases/genenames/new/tsv/hgnc_complete_set.txt}
+#' @source Extracted from \url{https://storage.googleapis.com/public-download-files/hgnc/tsv/tsv/hgnc_complete_set.txt}
 #' and system.file("extdata/mog_map.csv", package="HGNChelper")
 "hgnc.table"
 

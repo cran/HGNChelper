@@ -12,7 +12,7 @@
 
 <meta name="author" content="Levi Waldron and Markus Riester" />
 
-<meta name="date" content="2024-05-17" />
+<meta name="date" content="2024-11-16" />
 
 <title>HGNChelper Introduction</title>
 
@@ -340,7 +340,7 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 
 <h1 class="title toc-ignore">HGNChelper Introduction</h1>
 <h4 class="author">Levi Waldron and Markus Riester</h4>
-<h4 class="date">2024-05-17</h4>
+<h4 class="date">2024-11-16</h4>
 
 
 
@@ -374,27 +374,27 @@ valid and a third column with a corrected gene list.</p>
 <span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="co">#&gt;  </span></span>
 <span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a><span class="co">#&gt;  Sehyun Oh et al. HGNChelper: identification and correction of invalid gene symbols for human and mouse. F1000Research 2020, 9:1493. DOI: https://doi.org/10.12688/f1000research.28033.1 </span></span>
 <span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a><span class="co">#&gt;  </span></span>
-<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a><span class="co">#&gt;  Type `citation(&#39;HGNChelper&#39;)` for a BibTeX entry.</span></span></code></pre></div>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a>human <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;FN1&quot;</span>, <span class="st">&quot;tp53&quot;</span>, <span class="st">&quot;UNKNOWNGENE&quot;</span>,<span class="st">&quot;7-Sep&quot;</span>, <span class="st">&quot;9/7&quot;</span>, <span class="st">&quot;1-Mar&quot;</span>, <span class="st">&quot;Oct4&quot;</span>, <span class="st">&quot;4-Oct&quot;</span>,</span>
-<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>      <span class="st">&quot;OCT4-PG4&quot;</span>, <span class="st">&quot;C19ORF71&quot;</span>, <span class="st">&quot;C19orf71&quot;</span>)</span>
-<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="fu">checkGeneSymbols</span>(human)</span>
-<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="co">#&gt; Maps last updated on: Fri May 17 15:09:37 2024</span></span>
-<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a><span class="co">#&gt; Warning in checkGeneSymbols(human): Human gene symbols should be all upper-case</span></span>
-<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a><span class="co">#&gt; except for the &#39;orf&#39; in open reading frames. The case of some letters was</span></span>
-<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a><span class="co">#&gt; corrected.</span></span>
-<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a><span class="co">#&gt; Warning in checkGeneSymbols(human): x contains non-approved gene symbols</span></span>
-<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a><span class="co">#&gt;              x Approved   Suggested.Symbol</span></span>
-<span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a><span class="co">#&gt; 1          FN1     TRUE                FN1</span></span>
-<span id="cb3-11"><a href="#cb3-11" tabindex="-1"></a><span class="co">#&gt; 2         tp53    FALSE               TP53</span></span>
-<span id="cb3-12"><a href="#cb3-12" tabindex="-1"></a><span class="co">#&gt; 3  UNKNOWNGENE    FALSE               &lt;NA&gt;</span></span>
-<span id="cb3-13"><a href="#cb3-13" tabindex="-1"></a><span class="co">#&gt; 4        7-Sep    FALSE            SEPTIN7</span></span>
-<span id="cb3-14"><a href="#cb3-14" tabindex="-1"></a><span class="co">#&gt; 5          9/7    FALSE            SEPTIN7</span></span>
-<span id="cb3-15"><a href="#cb3-15" tabindex="-1"></a><span class="co">#&gt; 6        1-Mar    FALSE MARCHF1 /// MTARC1</span></span>
-<span id="cb3-16"><a href="#cb3-16" tabindex="-1"></a><span class="co">#&gt; 7         Oct4    FALSE             POU5F1</span></span>
-<span id="cb3-17"><a href="#cb3-17" tabindex="-1"></a><span class="co">#&gt; 8        4-Oct    FALSE             POU5F1</span></span>
-<span id="cb3-18"><a href="#cb3-18" tabindex="-1"></a><span class="co">#&gt; 9     OCT4-PG4    FALSE           POU5F1P4</span></span>
-<span id="cb3-19"><a href="#cb3-19" tabindex="-1"></a><span class="co">#&gt; 10    C19ORF71    FALSE            TEKTIP1</span></span>
-<span id="cb3-20"><a href="#cb3-20" tabindex="-1"></a><span class="co">#&gt; 11    C19orf71    FALSE            TEKTIP1</span></span></code></pre></div>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a><span class="co">#&gt;  Type `citation(&#39;HGNChelper&#39;)` for a BibTeX entry.</span></span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a>human <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;FN1&quot;</span>, <span class="st">&quot;tp53&quot;</span>, <span class="st">&quot;UNKNOWNGENE&quot;</span>,<span class="st">&quot;7-Sep&quot;</span>, <span class="st">&quot;9/7&quot;</span>, <span class="st">&quot;1-Mar&quot;</span>, <span class="st">&quot;Oct4&quot;</span>, <span class="st">&quot;4-Oct&quot;</span>,</span>
+<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a>      <span class="st">&quot;OCT4-PG4&quot;</span>, <span class="st">&quot;C19ORF71&quot;</span>, <span class="st">&quot;C19orf71&quot;</span>)</span>
+<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a><span class="fu">checkGeneSymbols</span>(human)</span>
+<span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a><span class="co">#&gt; Maps last updated on: Sat Nov 16 10:35:32 2024</span></span>
+<span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a><span class="co">#&gt; Warning in checkGeneSymbols(human): Human gene symbols should be all upper-case</span></span>
+<span id="cb2-12"><a href="#cb2-12" tabindex="-1"></a><span class="co">#&gt; except for the &#39;orf&#39; in open reading frames. The case of some letters was</span></span>
+<span id="cb2-13"><a href="#cb2-13" tabindex="-1"></a><span class="co">#&gt; corrected.</span></span>
+<span id="cb2-14"><a href="#cb2-14" tabindex="-1"></a><span class="co">#&gt; Warning in checkGeneSymbols(human): x contains non-approved gene symbols</span></span>
+<span id="cb2-15"><a href="#cb2-15" tabindex="-1"></a><span class="co">#&gt;              x Approved   Suggested.Symbol</span></span>
+<span id="cb2-16"><a href="#cb2-16" tabindex="-1"></a><span class="co">#&gt; 1          FN1     TRUE                FN1</span></span>
+<span id="cb2-17"><a href="#cb2-17" tabindex="-1"></a><span class="co">#&gt; 2         tp53    FALSE               TP53</span></span>
+<span id="cb2-18"><a href="#cb2-18" tabindex="-1"></a><span class="co">#&gt; 3  UNKNOWNGENE    FALSE               &lt;NA&gt;</span></span>
+<span id="cb2-19"><a href="#cb2-19" tabindex="-1"></a><span class="co">#&gt; 4        7-Sep    FALSE            SEPTIN7</span></span>
+<span id="cb2-20"><a href="#cb2-20" tabindex="-1"></a><span class="co">#&gt; 5          9/7    FALSE            SEPTIN7</span></span>
+<span id="cb2-21"><a href="#cb2-21" tabindex="-1"></a><span class="co">#&gt; 6        1-Mar    FALSE MARCHF1 /// MTARC1</span></span>
+<span id="cb2-22"><a href="#cb2-22" tabindex="-1"></a><span class="co">#&gt; 7         Oct4    FALSE             POU5F1</span></span>
+<span id="cb2-23"><a href="#cb2-23" tabindex="-1"></a><span class="co">#&gt; 8        4-Oct    FALSE             POU5F1</span></span>
+<span id="cb2-24"><a href="#cb2-24" tabindex="-1"></a><span class="co">#&gt; 9     OCT4-PG4    FALSE           POU5F1P4</span></span>
+<span id="cb2-25"><a href="#cb2-25" tabindex="-1"></a><span class="co">#&gt; 10    C19ORF71    FALSE            TEKTIP1</span></span>
+<span id="cb2-26"><a href="#cb2-26" tabindex="-1"></a><span class="co">#&gt; 11    C19orf71    FALSE            TEKTIP1</span></span></code></pre></div>
 <p>As you see, it even helps fix capitalization. How does it fix those
 Excel dates? I imported a column of all human gene symbols into Excel,
 then exported using a whole bunch of available date formats. Then I kept
@@ -404,15 +404,15 @@ any that differed from the originals for HGNChelper’s map.</p>
 <h2>Mouse gene symbols</h2>
 <p>Mouse genes work the same way, but you need to specify the argument
 <code>species=mouse</code>:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="fu">checkGeneSymbols</span>(<span class="fu">c</span>(<span class="st">&quot;1-Feb&quot;</span>, <span class="st">&quot;Pzp&quot;</span>, <span class="st">&quot;A2m&quot;</span>, <span class="st">&quot;E430008G22Rik&quot;</span>), <span class="at">species=</span><span class="st">&quot;mouse&quot;</span>)</span>
-<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="co">#&gt; Maps last updated on: Fri May 17 15:09:37 2024</span></span>
-<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="co">#&gt; Warning in checkGeneSymbols(c(&quot;1-Feb&quot;, &quot;Pzp&quot;, &quot;A2m&quot;, &quot;E430008G22Rik&quot;), species</span></span>
-<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="co">#&gt; = &quot;mouse&quot;): x contains non-approved gene symbols</span></span>
-<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a><span class="co">#&gt;               x Approved Suggested.Symbol</span></span>
-<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a><span class="co">#&gt; 1         1-Feb    FALSE             Feb1</span></span>
-<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a><span class="co">#&gt; 2           Pzp     TRUE              Pzp</span></span>
-<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a><span class="co">#&gt; 3           A2m     TRUE              A2m</span></span>
-<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a><span class="co">#&gt; 4 E430008G22Rik    FALSE             &lt;NA&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="fu">checkGeneSymbols</span>(<span class="fu">c</span>(<span class="st">&quot;1-Feb&quot;</span>, <span class="st">&quot;Pzp&quot;</span>, <span class="st">&quot;A2m&quot;</span>, <span class="st">&quot;E430008G22Rik&quot;</span>), <span class="at">species=</span><span class="st">&quot;mouse&quot;</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="co">#&gt; Maps last updated on: Sat Nov 16 10:35:32 2024</span></span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="co">#&gt; Warning in checkGeneSymbols(c(&quot;1-Feb&quot;, &quot;Pzp&quot;, &quot;A2m&quot;, &quot;E430008G22Rik&quot;), species</span></span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="co">#&gt; = &quot;mouse&quot;): x contains non-approved gene symbols</span></span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a><span class="co">#&gt;               x Approved Suggested.Symbol</span></span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a><span class="co">#&gt; 1         1-Feb    FALSE             Feb1</span></span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a><span class="co">#&gt; 2           Pzp     TRUE              Pzp</span></span>
+<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a><span class="co">#&gt; 3           A2m     TRUE              A2m</span></span>
+<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a><span class="co">#&gt; 4 E430008G22Rik    FALSE             &lt;NA&gt;</span></span></code></pre></div>
 <p>Mouse gene symbols containing any capital letter, except the first
 character, can not be fixed. For example, ‘E430008G22Rik’ is a symbol
 for <a href="https://www.informatics.jax.org/marker/MGI:87859">Abl1</a>
@@ -436,10 +436,10 @@ database.</li>
 </ol>
 <p>Numbers 2 and 3 are done by comparing to a complete map of both valid
 and invalid but mappable symbols, shipped with HGNChelper:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="fu">dim</span>(mouse.table)</span>
-<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="co">#&gt; [1] 752802      2</span></span></code></pre></div>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="fu">dim</span>(hgnc.table)</span>
-<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a><span class="co">#&gt; [1] 103744      3</span></span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="fu">dim</span>(mouse.table)</span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="co">#&gt; [1] 790110      2</span></span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="fu">dim</span>(hgnc.table)</span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="co">#&gt; [1] 103939      3</span></span></code></pre></div>
 <p>These are a combination of manually generated Excel mogrifications
 that remain constant, and aliases that can become out of date with
 time.</p>
@@ -473,25 +473,25 @@ aliased (now approved) gene symbol mapping to another approved symbol at
 that time. This can be checked with ‘expand.ambiguous = TRUE’ which
 gives out all the mapping of a gene symbol irrespective of whether it’s
 an approved symbol.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="fu">checkGeneSymbols</span>(<span class="st">&quot;AAVS1&quot;</span>, <span class="at">expand.ambiguous =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a><span class="co">#&gt; Maps last updated on: Fri May 17 15:09:37 2024</span></span>
-<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a><span class="co">#&gt;       x Approved Suggested.Symbol</span></span>
-<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a><span class="co">#&gt; 1 AAVS1     TRUE            AAVS1</span></span></code></pre></div>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="fu">checkGeneSymbols</span>(<span class="st">&quot;AAVS1&quot;</span>, <span class="at">expand.ambiguous =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a><span class="co">#&gt; Maps last updated on: Fri May 17 15:09:37 2024</span></span>
-<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a><span class="co">#&gt;       x Approved   Suggested.Symbol</span></span>
-<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a><span class="co">#&gt; 1 AAVS1     TRUE AAVS1 /// PPP1R12C</span></span></code></pre></div>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a></span>
-<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a><span class="fu">checkGeneSymbols</span>(<span class="fu">c</span>(<span class="st">&quot;Cpamd8&quot;</span>, <span class="st">&quot;Mug2&quot;</span>), <span class="at">species =</span> <span class="st">&quot;mouse&quot;</span>, <span class="at">expand.ambiguous =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a><span class="co">#&gt; Maps last updated on: Fri May 17 15:09:37 2024</span></span>
-<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a><span class="co">#&gt;        x Approved Suggested.Symbol</span></span>
-<span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a><span class="co">#&gt; 1 Cpamd8     TRUE           Cpamd8</span></span>
-<span id="cb9-6"><a href="#cb9-6" tabindex="-1"></a><span class="co">#&gt; 2   Mug2     TRUE             Mug2</span></span></code></pre></div>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="fu">checkGeneSymbols</span>(<span class="fu">c</span>(<span class="st">&quot;Cpamd8&quot;</span>, <span class="st">&quot;Mug2&quot;</span>), <span class="at">species =</span> <span class="st">&quot;mouse&quot;</span>, <span class="at">expand.ambiguous =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a><span class="co">#&gt; Maps last updated on: Fri May 17 15:09:37 2024</span></span>
-<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a><span class="co">#&gt;        x Approved Suggested.Symbol</span></span>
-<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a><span class="co">#&gt; 1 Cpamd8     TRUE  Cpamd8 /// Mug2</span></span>
-<span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a><span class="co">#&gt; 2   Mug2     TRUE  Mug2 /// Cpamd8</span></span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="fu">checkGeneSymbols</span>(<span class="st">&quot;AAVS1&quot;</span>, <span class="at">expand.ambiguous =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="co">#&gt; Maps last updated on: Sat Nov 16 10:35:32 2024</span></span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="co">#&gt;       x Approved Suggested.Symbol</span></span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a><span class="co">#&gt; 1 AAVS1     TRUE            AAVS1</span></span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a><span class="fu">checkGeneSymbols</span>(<span class="st">&quot;AAVS1&quot;</span>, <span class="at">expand.ambiguous =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a><span class="co">#&gt; Maps last updated on: Sat Nov 16 10:35:32 2024</span></span>
+<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a><span class="co">#&gt;       x Approved   Suggested.Symbol</span></span>
+<span id="cb5-8"><a href="#cb5-8" tabindex="-1"></a><span class="co">#&gt; 1 AAVS1     TRUE AAVS1 /// PPP1R12C</span></span>
+<span id="cb5-9"><a href="#cb5-9" tabindex="-1"></a></span>
+<span id="cb5-10"><a href="#cb5-10" tabindex="-1"></a><span class="fu">checkGeneSymbols</span>(<span class="fu">c</span>(<span class="st">&quot;Cpamd8&quot;</span>, <span class="st">&quot;Mug2&quot;</span>), <span class="at">species =</span> <span class="st">&quot;mouse&quot;</span>, <span class="at">expand.ambiguous =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb5-11"><a href="#cb5-11" tabindex="-1"></a><span class="co">#&gt; Maps last updated on: Sat Nov 16 10:35:32 2024</span></span>
+<span id="cb5-12"><a href="#cb5-12" tabindex="-1"></a><span class="co">#&gt;        x Approved Suggested.Symbol</span></span>
+<span id="cb5-13"><a href="#cb5-13" tabindex="-1"></a><span class="co">#&gt; 1 Cpamd8     TRUE           Cpamd8</span></span>
+<span id="cb5-14"><a href="#cb5-14" tabindex="-1"></a><span class="co">#&gt; 2   Mug2     TRUE             Mug2</span></span>
+<span id="cb5-15"><a href="#cb5-15" tabindex="-1"></a><span class="fu">checkGeneSymbols</span>(<span class="fu">c</span>(<span class="st">&quot;Cpamd8&quot;</span>, <span class="st">&quot;Mug2&quot;</span>), <span class="at">species =</span> <span class="st">&quot;mouse&quot;</span>, <span class="at">expand.ambiguous =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb5-16"><a href="#cb5-16" tabindex="-1"></a><span class="co">#&gt; Maps last updated on: Sat Nov 16 10:35:32 2024</span></span>
+<span id="cb5-17"><a href="#cb5-17" tabindex="-1"></a><span class="co">#&gt;        x Approved Suggested.Symbol</span></span>
+<span id="cb5-18"><a href="#cb5-18" tabindex="-1"></a><span class="co">#&gt; 1 Cpamd8     TRUE  Cpamd8 /// Mug2</span></span>
+<span id="cb5-19"><a href="#cb5-19" tabindex="-1"></a><span class="co">#&gt; 2   Mug2     TRUE  Mug2 /// Cpamd8</span></span></code></pre></div>
 </div>
 <div id="where-do-i-find-hgnchelper" class="section level2">
 <h2>Where do I find HGNChelper?</h2>

@@ -52,7 +52,10 @@ getCurrentHumanMap <- function(){
     hgnc.table <- hgnc.table[is.ascii, ]
     return(hgnc.table)
   }
-  url <- "ftp://ftp.ebi.ac.uk/pub/databases/genenames/new/tsv/hgnc_complete_set.txt"
+  url <- paste0(
+    "https://storage.googleapis.com/public-download-files/",
+    "hgnc/tsv/tsv/hgnc_complete_set.txt"
+  )
   if(!file.exists("hgnc_complete_set.txt")){
     message(paste("Fetching human gene symbols from", url))
     download.file(url, destfile = "hgnc_complete_set.txt")    
@@ -96,7 +99,7 @@ getCurrentHumanMap <- function(){
   output <- .fixttable(output)
   output <- merge(output, map[, c("location", "symbol")], by = 2)
   output <- output[, c(2, 1, 3)]
-  output <- splitstackshape::cSplit(splitstackshape::cSplit(output, 3, "p"), 3, "q")
+  output <- suppressWarnings(splitstackshape::cSplit(splitstackshape::cSplit(output, 3, "p"), 3, "q"))
   output <- output[, c(1, 2, 5)]
   colnames(output)[3] <- "chromosome"
   return(output)

@@ -1,9 +1,12 @@
 # HGNChelper
 ----------------------------------------------------------------
+## Changes in version 0.8.15
+* Update URL for HGNC map download
+* Built-in maps updated to Nov 16 2024
 
 ## Changes in version 0.8.4
-* Importnat bugfix in mouse gene symbol correction process. 
-* Built-in maps updated to Aug 10 2020
+* Important bugfix in mouse gene symbol correction process. 
+* Built-in maps updated to May 17 2024
 
 ## Changes in version 0.8.1
 * Important bugfix: outdated symbols in extdata/mog_map.csv - those

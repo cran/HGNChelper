@@ -5,8 +5,8 @@ Authors@R: c(person("Sehyun", "Oh", email = "sehyun.oh@sph.cuny.edu", role = c("
   person("Ayush", "Aggarwal", email = "ayush.aggarwal@igib.in", role = c("aut")),
   person("Markus", "Riester", email = "Markus.riester@novartis.com", role = c("aut")),
   person("Levi", "Waldron", email = "lwaldron.research@gmail.com", role = c("aut", "cre")))
-Version: 0.8.14
-Date: 2024-05-17
+Version: 0.8.15
+Date: 2024-11-16
 License: GPL (>= 2.0)
 Title: Identify and Correct Invalid HGNC Human Gene Symbols and MGI
         Mouse Gene Symbols
@@ -19,16 +19,16 @@ URL: https://github.com/waldronlab/HGNChelper,
         https://waldronlab.io/HGNChelper/
 BugReports: https://github.com/waldronlab/HGNChelper/issues
 LazyData: TRUE
-RoxygenNote: 7.3.1
+RoxygenNote: 7.3.2
 Encoding: UTF-8
 Imports: splitstackshape
 Suggests: testthat, knitr, rmarkdown, markdown
 VignetteBuilder: knitr
 NeedsCompilation: no
-Packaged: 2024-05-18 04:12:57 UTC; Levi
+Packaged: 2024-11-16 16:08:43 UTC; Levi
 Author: Sehyun Oh [aut],
   Ayush Aggarwal [aut],
   Markus Riester [aut],
   Levi Waldron [aut, cre]
 Repository: CRAN
-Date/Publication: 2024-05-18 13:30:02 UTC
+Date/Publication: 2024-11-16 17:10:11 UTC
